@@ -1,5 +1,4 @@
 const express = require("express");
-const router = express.Router();
 const { translate } = require("@vitalets/google-translate-api");
 
 const app = express();
@@ -17,7 +16,7 @@ async function translateText(text) {
 }
 
 // POST endpoint for translation
-router.post("/translate", async (req, res) => {
+app.post("/translate", async (req, res) => {
     try {
         const { text } = req.body;
         console.log(text.toString());
